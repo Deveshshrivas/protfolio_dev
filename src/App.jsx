@@ -1,4 +1,4 @@
-import './components/Hero/Hero'
+import Hero from './section/Hero/Hero'
 import './App.css'
 
 function App() {
