@@ -1,15 +1,19 @@
-import Style from './HeroStyle.module.css'
-import Heroimg from '../../assets/hero-img.png'
-import themeIcon from '../../assets/sun.svg'
-import twitterIcon from '../../assets/twitter-light.svg'
-import githubIcon from '../../assets/github-light.svg'
-import linkedinIcon from '../../assets/linkedin-light.svg'
+import Style from './HeroStyle.module.css';
+import Heroimg from '../../assets/hero-img.png';
+import themeIcon from '../../assets/sun.svg';
+import twitterIcon from '../../assets/twitter-light.svg';
+import githubIcon from '../../assets/github-light.svg';
+import linkedinIcon from '../../assets/linkedin-light.svg';
+import { useTheme } from '../../common/ThemeContext';
 const Hero = () => {
+const {theme, toggleTheme } = useTheme();
+
+  const themeIcon = theme === 'light' ? sun : moon;
   return (
     <section id='hero' className='Style.container'>
       <div className='Style.colorModeContainer'>
         <img className='Style.hero' src={Heroimg} alt="devesh profile picture" />
-        <img className='Style.colorMode' src={themeIcon} alt="dark mode" />
+        <img className='Style.colorMode' src={themeIcon} alt="dark mode" onClick={toggleTheme} />
       </div>
       <div className='Style.info'>
         <h1>Devesh Shrivas</h1>
